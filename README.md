@@ -47,24 +47,63 @@ If the control input changes to AB = 10, then all the gates are restricted excep
  
  
 ### Procedure
-/* write all the steps invloved */
+1.Create a project with required entities.
+
+2.Create a module along with respective file name for both Multiplexer and De-multiplexer.
+
+3.Run the module and get the respective RTL outputs.
+
+4.Create university program(VWF) for getting timing diagram.
+
+5.Give the respective inputs for timing diagram and obtain the results.
+
 
 
 
 ### PROGRAM 
 /*
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by:harithashree.v 
+RegisterNumber:  212222230046
 */
+## MULTIPLEXER:
+module mul(d0,d1,d2,d3,a,b,q);
+input d0,d1,d2,d3,a,b;
+output q;
+wire l,m,n,o,abar,bbar;
+not(abar,a);
+not(bbar,b);
+and(l,d0,abar,bbar);
+and(m,d1,abar,b);
+and(n,d2,a,bbar);
+and(o,d3,a,b);
+or(q,l,m,n,o);
+endmodule
 
-
+## DE-MULTIPLEXER:
+module demul(d,a,b,y0,y1,y2,y3);
+input d,a,b;
+output y0,y1,y2,y3;
+wire abar,bbar;
+not(abar,a);
+not(bbar,b);
+and(y0,d,abar,bbar);
+and(y1,abar,b,d);
+and(y2,a,bbar,d);
+and(y3,a,b,d);
+endmodule
 
 
 
 
 ### RTL LOGIC  
 
+## MULTIPLEXER:
+![Screenshot 2023-06-09 202850](https://github.com/haritha-venkat/Exercise-07-Multiplexer-and-De-multiplexer/assets/121285701/5e5c0a6d-21b4-4dad-b5f7-522b66c8f16c)
+
+## DE-MULTIPLEXER:
+
+![Screenshot 2023-06-09 202928](https://github.com/haritha-venkat/Exercise-07-Multiplexer-and-De-multiplexer/assets/121285701/ad2b5304-7ad7-4419-b2dd-7b4e57a95a31)
 
 
 
@@ -74,15 +113,34 @@ RegisterNumber:
 
 ### TIMING DIGRAMS  
 
+## MULTIPLEXER:
+
+![Screenshot 2023-06-09 202959](https://github.com/haritha-venkat/Exercise-07-Multiplexer-and-De-multiplexer/assets/121285701/239208e2-1c61-4aed-88f9-b40aaf627be6)
+
+## DE-MULTIPLEXER:
+
+![Screenshot 2023-06-09 203028](https://github.com/haritha-venkat/Exercise-07-Multiplexer-and-De-multiplexer/assets/121285701/67963956-303a-4622-af7a-c5352947cbe8)
+
 
 
 
 
 ### TRUTH TABLE 
 
+## MULTIPLEXER:
+
+![Screenshot 2023-06-09 203100](https://github.com/haritha-venkat/Exercise-07-Multiplexer-and-De-multiplexer/assets/121285701/4bafdb11-cd29-4f50-8f89-592523ee031e)
+
+## DE-MULTIPLEXER:
+
+![Screenshot 2023-06-09 203126](https://github.com/haritha-venkat/Exercise-07-Multiplexer-and-De-multiplexer/assets/121285701/e91326cd-ca0f-443f-8252-6984842d3e42)
 
 
 
 
 
-### RESULTS 
+### RESULTS:
+
+Thus the program to design multiplexer and de-multiplexer is successfully completed.
+
+
