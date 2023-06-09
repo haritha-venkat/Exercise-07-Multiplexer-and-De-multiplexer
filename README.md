@@ -67,6 +67,7 @@ Developed by:harithashree.v
 RegisterNumber:  212222230046
 */
 ## MULTIPLEXER:
+```python
 module mul(d0,d1,d2,d3,a,b,q);
 input d0,d1,d2,d3,a,b;
 output q;
@@ -79,8 +80,9 @@ and(n,d2,a,bbar);
 and(o,d3,a,b);
 or(q,l,m,n,o);
 endmodule
-
+```
 ## DE-MULTIPLEXER:
+```python
 module demul(d,a,b,y0,y1,y2,y3);
 input d,a,b;
 output y0,y1,y2,y3;
@@ -92,7 +94,7 @@ and(y1,abar,b,d);
 and(y2,a,bbar,d);
 and(y3,a,b,d);
 endmodule
-
+```
 
 
 
